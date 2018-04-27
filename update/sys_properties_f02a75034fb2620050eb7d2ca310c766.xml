@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Threshold limit of  requests per minute before REST API is disabled (default=30)</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_cavu_rest_diag.throttle_limit</name>
+        <read_roles>admin,x_cavu_rest_diag_rest_request_review_user</read_roles>
+        <suffix>throttle_limit</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>CAVUCode</sys_created_by>
+        <sys_created_on>2016-11-04 19:21:27</sys_created_on>
+        <sys_id>f02a75034fb2620050eb7d2ca310c766</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>x_cavu_rest_diag.throttle_limit</sys_name>
+        <sys_package display_value="REST Reflector by CAVUCode" source="x_cavu_rest_diag">30e476800f6d660059a387ece1050e1f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</sys_scope>
+        <sys_update_name>sys_properties_f02a75034fb2620050eb7d2ca310c766</sys_update_name>
+        <sys_updated_by>CAVUCode</sys_updated_by>
+        <sys_updated_on>2016-12-14 23:20:59</sys_updated_on>
+        <type>integer</type>
+        <value>30</value>
+        <write_roles>admin</write_roles>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=f02a75034fb2620050eb7d2ca310c766"/>
+</record_update>

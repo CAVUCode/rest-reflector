@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="query_strings" label="Query strings" language="en" table="x_cavu_rest_diag_request_review">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>query_strings</element>
+            <help/>
+            <hint/>
+            <label>Query strings</label>
+            <language>en</language>
+            <name>x_cavu_rest_diag_request_review</name>
+            <plural>Query strings</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>CAVUCode</sys_created_by>
+            <sys_created_on>2016-08-25 13:14:49</sys_created_on>
+            <sys_id>81cdbacc0f6d660059a387ece1050e2e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Query strings</sys_name>
+            <sys_package display_value="REST Reflector by CAVUCode" source="x_cavu_rest_diag">30e476800f6d660059a387ece1050e1f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</sys_scope>
+            <sys_update_name>sys_documentation_x_cavu_rest_diag_request_review_query_strings_en</sys_update_name>
+            <sys_updated_by>CAVUCode</sys_updated_by>
+            <sys_updated_on>2016-08-25 13:14:49</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

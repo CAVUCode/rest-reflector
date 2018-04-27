@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cavu_rest_diag.RESTReflector</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>RESTReflector</name>
+        <script><![CDATA[var RESTReflector = Class.create();
+RESTReflector.prototype = {
+	initialize: function() {
+	},
+	
+	logRequest: function(request, method, reflect){
+		if (this._limitReached())
+			return;
+		
+		var rr = new GlideRecord("x_cavu_rest_diag_request_review");
+		rr.setValue("method", method);
+		rr.setValue("url", request.url);
+		var bodyString = "";
+		if ((method != "GET" && method != "DELETE") && !gs.nil(request.body)) {
+			bodyString = request.body.dataString;
+			rr.setValue("body", bodyString);
+		}
+		
+		rr.setValue("headers", global.JSON.stringify(request.headers));
+		rr.setValue("query_strings", global.JSON.stringify(request.queryParams));
+		rr.insert();
+		
+		if (reflect) {
+			var responseData = {};
+			
+			responseData.method = method;
+			responseData.queryString = request.queryString;
+			if ((method != "GET" && method != "DELETE") && !gs.nil(request.body)) {
+//				responseData.body = global.JSON.stringify(request.body.dataString);
+				responseData.body = bodyString;
+			}
+			responseData.headers = request.headers;
+			responseData.pathParams = request.pathParams;
+			responseData.queryParams = request.queryParams;
+			gs.debug("responseData: "+ global.JSON.stringify(responseData));
+			return responseData;
+		}
+	},
+	
+	getReflections: function() {
+		var gr = new GlideRecord("x_cavu_rest_diag_request_review");
+		gr.setLimit(30);
+		gr.orderByDesc("sys_created_on");
+		gr.query();
+		var data = {};
+		data.endpoint_disabled = this._endpointDisabled();
+		this.endpoint_disabled = data.endpoint_disabled;
+		var reflections = [];
+		while (gr.next()) {
+			var req = {};
+			req.method = gr.getValue("method");
+			var headers = [];
+			var headerStrings = global.JSON.parse(gr.getValue("headers"));
+			for (var h in headerStrings) {
+				headers.push(h + " = " + headerStrings[h]);
+			}
+			req.headers = headers;
+			
+			var queryStrings = global.JSON.parse(gr.getValue("query_strings"));
+			
+			var params = [];
+			for (var q in queryStrings) {
+				params.push(q + " = " + queryStrings[q]);
+			}
+			
+			req.query_strings = params;
+			
+			req.url = gr.getValue("url");
+			var body = gr.getValue("body");
+			try {
+				body = global.JSON.parse(body);
+			}
+			catch (err) {
+				gs.error("Error parsing body string: {0} - {1}", body, err);
+			}
+			req.body = body;
+			req.created = gr.getDisplayValue("sys_created_on");
+			req.created_by = gr.getValue("sys_created_by");
+			req.id = gr.getUniqueValue();
+			reflections.push(req);
+		}
+		data.reflections = reflections;
+		data.endpoint = gs.getProperty("glide.servlet.uri") + "api/x_cavu_rest_diag/rr";
+		
+		data.ops_status = this._getOpsStatus();
+		data.updated = new GlideDateTime().getDisplayValue();
+		return data;
+	},
+	
+	_limitReached: function() {
+		gs.info("checking limit");
+		var limit = gs.getProperty("x_cavu_rest_diag.throttle_limit", 30);
+		var gr = new GlideAggregate("x_cavu_rest_diag_request_review");
+		var minAgo = new GlideDateTime();
+		minAgo.addSeconds(-60);
+		gr.addQuery("sys_created_on", ">", minAgo);
+		
+		gr.addAggregate("COUNT");
+		gr.query();
+		
+		if (gr.next() && gr.getAggregate("COUNT") > limit) {
+			gs.info("RESTReflector throttle limit reached, disabling REST endpoint to protect instance");
+			this._disableEndpoint();
+		}
+		
+	},
+	
+	_getOpsStatus: function() {
+		var ops = new GlideRecord("sys_ws_operation");
+		ops.orderBy("name");
+		ops.addQuery("web_service_definition", "31f43a040f6d660059a387ece1050e3e");
+		ops.query();
+		var ops_status = [];
+		while (ops.next()) {
+			var op = {};
+			op.name = ops.getValue("name");
+			op.method = ops.getDisplayValue("http_method");
+			op.active = ops.getValue("active");
+			op.req_auth = ops.getValue("requires_authentication");
+			ops_status.push(op);
+		}
+		
+		return ops_status;
+	},
+	
+	_disableEndpoint: function() {
+		var gr = new GlideRecord("sys_ws_definition");
+		if (gr.get("31f43a040f6d660059a387ece1050e3e")) {
+			gr.active = false;
+			gr.update();
+		}
+		
+	},
+	
+	_endpointDisabled: function() {
+		var gr = new GlideRecord("sys_ws_definition");
+		if (gr.get("31f43a040f6d660059a387ece1050e3e")) {
+			if (gr.active != true)
+				return true;
+		}
+		return false;
+		
+	},
+	
+	
+	type: 'RESTReflector'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>CAVUCode</sys_created_by>
+        <sys_created_on>2016-09-22 22:52:59</sys_created_on>
+        <sys_id>c24e89d10f8a224059a387ece1050e94</sys_id>
+        <sys_mod_count>65</sys_mod_count>
+        <sys_name>RESTReflector</sys_name>
+        <sys_package display_value="REST Reflector by CAVUCode" source="x_cavu_rest_diag">30e476800f6d660059a387ece1050e1f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</sys_scope>
+        <sys_update_name>sys_script_include_c24e89d10f8a224059a387ece1050e94</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-23 23:52:07</sys_updated_on>
+    </sys_script_include>
+</record_update>

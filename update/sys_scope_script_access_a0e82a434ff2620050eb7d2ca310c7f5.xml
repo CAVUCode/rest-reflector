@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_scope_script_access">
+    <sys_scope_script_access action="INSERT_OR_UPDATE">
+        <example_stack_trace>API_INT-thread-10
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.getCurrentStackTrace(ScopeAccessProvider.java:234)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.record(ScopeAccessProvider.java:202)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.access$100(ScopeAccessProvider.java:81)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider.recordAccess(ScopeAccessProvider.java:64)
+	com.glide.sys.fencing.dependency.ScopeAccessRecorder.record(ScopeAccessRecorder.java:13)
+	com.glide.script.system.ASystemInclude.recordCrossScopeDependency(ASystemInclude.java:153)
+	com.glide.script.system.ASystemInclude.include(ASystemInclude.java:133)
+	com.glide.script.AGlideRhinoScopeHandler.isScriptInclude(AGlideRhinoScopeHandler.java:45)
+	com.glide.script.GlideRhinoScopeHandler.found(GlideRhinoScopeHandler.java:27)
+	com.glide.script.ARhinoScope.get(ARhinoScope.java:77)
+	com.glide.script.RhinoScope.get(RhinoScope.java:52)
+	com.glide.script.PackageRhinoGlobalScope.get(PackageRhinoGlobalScope.java:34)
+	org.mozilla.javascript.ScriptableObject.getProperty(ScriptableObject.java:2323)
+	org.mozilla.javascript.ScriptRuntime.getObjectProp(ScriptRuntime.java:1536)
+	org.mozilla.javascript.ScriptRuntime.getObjectProp(ScriptRuntime.java:1529)
+	org.mozilla.javascript.gen.sys_script_include_c24e89d10f8a224059a387ece1050e94_2657._c_anonymous_3(sys_script_include.c24e89d10f8a224059a387ece1050e94:52)
+	org.mozilla.javascript.gen.sys_script_include_c24e89d10f8a224059a387ece1050e94_2657.call(sys_script_include.c24e89d10f8a224059a387ece1050e94)
+	org.mozilla.javascript.ScriptRuntime.doCall2(ScriptRuntime.java:2645)
+	org.mozilla.javascript.ScriptRuntime.doCall(ScriptRuntime.java:2582)
+	org.mozilla.javascript.optimizer.OptRuntime.callProp0(OptRuntime.java:85)
+	org.mozilla.javascript.gen.sys_ws_operation_c13d0a0b4fb2620050eb7d2ca310c741_2553._c_process_1(sys_ws_operation.c13d0a0b4fb2620050eb7d2ca310c741:3)
+	org.mozilla.javascript.gen.sys_ws_operation_c13d0a0b4fb2620050eb7d2ca310c741_2553.call(sys_ws_operation.c13d0a0b4fb2620050eb7d2ca310c741)
+	org.mozilla.javascript.ScriptRuntime.doCall2(ScriptRuntime.java:2645)
+	org.mozilla.javascript.ScriptRuntime.doCall(ScriptRuntime.java:2582)
+	org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:42)
+	org.mozilla.javascript.gen.sys_ws_operation_c13d0a0b4fb2620050eb7d2ca310c741_2553._c_script_0(sys_ws_operation.c13d0a0b4fb2620050eb7d2ca310c741:1)
+	org.mozilla.javascript.gen.sys_ws_operation_c13d0a0b4fb2620050eb7d2ca310c741_2553.call(sys_ws_operation.c13d0a0b4fb2620050eb7d2ca310c741)
+	org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:560)
+	org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3439)
+	org.mozilla.javascript.gen.sys_ws_operation_c13d0a0b4fb2620050eb7d2ca310c741_2553.call(sys_ws_operation.c13d0a0b4fb2620050eb7d2ca310c741)
+	org.mozilla.javascript.gen.sys_ws_operation_c13d0a0b4fb2620050eb7d2ca310c741_2553.exec(sys_ws_operation.c13d0a0b4fb2620050eb7d2ca310c741)
+	com.glide.script.ScriptEvaluator.execute(ScriptEvaluator.java:236)
+	com.glide.script.ScriptEvaluator.evaluateString(ScriptEvaluator.java:107)
+	com.glide.script.ScriptEvaluator.evaluateString(ScriptEvaluator.java:73)
+	com.glide.script.fencing.GlideScopedEvaluator.evaluateScript(GlideScopedEvaluator.java:322)
+	com.glide.script.fencing.GlideScopedEvaluator.evaluateScript(GlideScopedEvaluator.java:283)
+	com.glide.script.fencing.GlideScopedEvaluator.evaluateScript(GlideScopedEvaluator.java:254)
+	com.glide.script.fencing.GlideScopedEvaluator.evaluateScript(GlideScopedEvaluator.java:242)
+	com.glide.rest.service.custom.CustomService.runScript(CustomService.java:95)
+	com.glide.rest.service.custom.CustomService.execute(CustomService.java:82)
+	com.glide.rest.handler.impl.ServiceHandlerImpl.invokeService(ServiceHandlerImpl.java:36)
+	com.glide.rest.processors.RESTAPIProcessor.process(RESTAPIProcessor.java:228)
+	com.glide.processors.AProcessor.runProcessor(AProcessor.java:412)
+	com.glide.processors.AProcessor.processTransaction(AProcessor.java:187)
+	com.glide.processors.ProcessorRegistry.process(ProcessorRegistry.java:165)
+	com.glide.ui.GlideServletTransaction.process(GlideServletTransaction.java:49)
+	com.glide.sys.ServletTransaction.run(ServletTransaction.java:34)
+	java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	java.lang.Thread.run(Thread.java:745)
+</example_stack_trace>
+        <script_name>JSON</script_name>
+        <source_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</source_scope>
+        <sys_class_name>sys_scope_script_access</sys_class_name>
+        <sys_created_by>CAVUCode</sys_created_by>
+        <sys_created_on>2016-11-04 22:43:51</sys_created_on>
+        <sys_id>a0e82a434ff2620050eb7d2ca310c7f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>JSON</sys_name>
+        <sys_package display_value="REST Reflector by CAVUCode" source="x_cavu_rest_diag">30e476800f6d660059a387ece1050e1f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</sys_scope>
+        <sys_update_name>sys_scope_script_access_a0e82a434ff2620050eb7d2ca310c7f5</sys_update_name>
+        <sys_updated_by>CAVUCode</sys_updated_by>
+        <sys_updated_on>2016-11-04 22:43:51</sys_updated_on>
+        <target_scope display_value="Global">global</target_scope>
+    </sys_scope_script_access>
+</record_update>

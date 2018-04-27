@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties_category_m2m">
+    <sys_properties_category_m2m action="INSERT_OR_UPDATE">
+        <category display_value="RESTReflector">320a75034fb2620050eb7d2ca310c77a</category>
+        <order>100</order>
+        <property display_value="x_cavu_rest_diag.throttle_limit" name="x_cavu_rest_diag.throttle_limit">f02a75034fb2620050eb7d2ca310c766</property>
+        <sys_class_name>sys_properties_category_m2m</sys_class_name>
+        <sys_created_by>CAVUCode</sys_created_by>
+        <sys_created_on>2016-11-04 19:21:28</sys_created_on>
+        <sys_id>8c9a75034fb2620050eb7d2ca310c76a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_cavu_rest_diag.throttle_limit.RESTReflector</sys_name>
+        <sys_package display_value="REST Reflector by CAVUCode" source="x_cavu_rest_diag">30e476800f6d660059a387ece1050e1f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</sys_scope>
+        <sys_update_name>sys_properties_category_m2m_8c9a75034fb2620050eb7d2ca310c76a</sys_update_name>
+        <sys_updated_by>CAVUCode</sys_updated_by>
+        <sys_updated_on>2016-11-04 19:23:22</sys_updated_on>
+    </sys_properties_category_m2m>
+</record_update>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_definition">
+    <sys_ws_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <base_uri>/api/x_cavu_rest_diag/rr</base_uri>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_version>No active default version</default_version>
+        <doc_link/>
+        <enforce_acl>1b18ce4e4f7e22001068e321a310c755</enforce_acl>
+        <is_versioned>false</is_versioned>
+        <name>REST Reflector</name>
+        <namespace>x_cavu_rest_diag</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>rr</service_id>
+        <short_description>Open endpoints for capturing and viewing request data to be used for diagnostics</short_description>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>CAVUCode</sys_created_by>
+        <sys_created_on>2016-08-25 12:37:14</sys_created_on>
+        <sys_id>31f43a040f6d660059a387ece1050e3e</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_name>REST Reflector</sys_name>
+        <sys_package display_value="REST Reflector by CAVUCode" source="x_cavu_rest_diag">30e476800f6d660059a387ece1050e1f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</sys_scope>
+        <sys_update_name>sys_ws_definition_31f43a040f6d660059a387ece1050e3e</sys_update_name>
+        <sys_updated_by>CAVUCode</sys_updated_by>
+        <sys_updated_on>2016-12-14 23:22:21</sys_updated_on>
+    </sys_ws_definition>
+</record_update>

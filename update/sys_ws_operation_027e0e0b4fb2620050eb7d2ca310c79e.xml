@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>1b18ce4e4f7e22001068e321a310c755</enforce_acl>
+        <http_method>PATCH</http_method>
+        <name>PATCH</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	
+	var method = "PATCH";
+	var rr = new x_cavu_rest_diag.RESTReflector();
+	var reflect = request.queryParams.reflect;
+	var reflection = rr.logRequest(request, method, reflect);
+	
+	if (reflect) {
+		response.setBody(reflection);
+		response.setContentType("application/json");
+	}
+	response.setStatus(200);
+	
+})(request, response);
+
+]]></operation_script>
+        <operation_uri>/api/x_cavu_rest_diag/rr</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>CAVUCode</sys_created_by>
+        <sys_created_on>2016-11-04 20:48:26</sys_created_on>
+        <sys_id>027e0e0b4fb2620050eb7d2ca310c79e</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>PATCH</sys_name>
+        <sys_package display_value="REST Reflector by CAVUCode" source="x_cavu_rest_diag">30e476800f6d660059a387ece1050e1f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</sys_scope>
+        <sys_update_name>sys_ws_operation_027e0e0b4fb2620050eb7d2ca310c79e</sys_update_name>
+        <sys_updated_by>CAVUCode</sys_updated_by>
+        <sys_updated_on>2016-11-21 22:26:53</sys_updated_on>
+        <web_service_definition display_value="REST Reflector">31f43a040f6d660059a387ece1050e3e</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

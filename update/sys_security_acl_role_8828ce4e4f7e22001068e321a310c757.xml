@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>CAVUCode</sys_created_by>
+        <sys_created_on>2016-11-01 17:47:15</sys_created_on>
+        <sys_id>8828ce4e4f7e22001068e321a310c757</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>rest_reflections.admin</sys_name>
+        <sys_package display_value="REST Reflector by CAVUCode" source="x_cavu_rest_diag">30e476800f6d660059a387ece1050e1f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Reflector by CAVUCode">30e476800f6d660059a387ece1050e1f</sys_scope>
+        <sys_security_acl display_value="rest_reflector_endpoints">1b18ce4e4f7e22001068e321a310c755</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_8828ce4e4f7e22001068e321a310c757</sys_update_name>
+        <sys_updated_by>CAVUCode</sys_updated_by>
+        <sys_updated_on>2016-11-01 17:47:15</sys_updated_on>
+        <sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

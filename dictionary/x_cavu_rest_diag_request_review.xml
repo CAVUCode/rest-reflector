@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="REST Request Review" max_length="40" name="x_cavu_rest_diag_request_review" type="collection">
+        <element label="Body" max_length="64000" name="body" type="string"/>
+        <element label="Headers" max_length="4000" name="headers" type="string"/>
+        <element label="Method" max_length="40" name="method" type="string"/>
+        <element label="Query strings" max_length="4000" name="query_strings" type="string"/>
+        <element label="URL" max_length="4000" name="url" type="string"/>
+    </element>
+</database>
